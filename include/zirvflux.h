@@ -46,4 +46,18 @@ int  zf_present_region(const zf_buffer_t *buf,
 
 int  zf_list_buffers(zf_buffer_t *bufs, uint32_t *count);
 
+void zf_suppress_dbg(void);
+void zf_reboot(void);
+int  zf_set_cursor(int x, int y);
+
+/* ── Mouse / touchpad ──────────────────────────────────────────────────── */
+typedef struct {
+    int32_t  dx;
+    int32_t  dy;
+    uint8_t  buttons;
+} zf_mouse_event_t;
+
+/* Read next mouse event (non-blocking). Returns 0 on success, -1 if none. */
+int zf_read_mouse(zf_mouse_event_t *ev);
+
 #endif
