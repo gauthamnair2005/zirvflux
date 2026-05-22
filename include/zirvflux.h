@@ -12,12 +12,14 @@ typedef enum {
     ZF_FORMAT_RGBX8888 = 0,
 } zf_format_t;
 
+/* NOTE: layout must match kernel's dj_display_mode_t exactly */
 typedef struct {
     uint32_t width;
     uint32_t height;
     uint32_t stride;
     uint8_t  bpp;
-    int      connected;
+    uint8_t  connected;
+    uint8_t  _pad[2];
     char     connector_name[ZF_CONNECTOR_NAME];
 } zf_display_info_t;
 
