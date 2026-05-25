@@ -11,7 +11,6 @@
 #define SYS_DJ_SURFACE_READ    117
 #define SYS_DJ_LIST_SURFACES   118
 #define SYS_REBOOT             100
-#define SYS_SUPPRESS_DBG       121
 #define SYS_MOUSE_READ         122
 #define SYS_DJ_SET_CURSOR      123
 
@@ -117,11 +116,6 @@ int zf_list_buffers(zf_buffer_t *bufs, uint32_t *count)
 {
     if (!bufs || !count) return -1;
     return (int)zf_syscall2(SYS_DJ_LIST_SURFACES, (long)bufs, (long)count);
-}
-
-void zf_suppress_dbg(void)
-{
-    zf_syscall0(SYS_SUPPRESS_DBG);
 }
 
 void zf_reboot(void)
