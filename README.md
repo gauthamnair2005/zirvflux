@@ -23,6 +23,10 @@ link against.
 - `zf_write_buffer()` — write pixel data to a buffer
 - `zf_present()` / `zf_present_region()` — flip a buffer to the screen
 - `zf_list_buffers()` — enumerate all allocated buffers
+- `zf_set_cursor()` — set hardware cursor position
+- `zf_set_perf_mode()` — performance hint to compositor (no-op stub)
+- `zf_read_mouse()` — read next mouse event (non-blocking)
+- `zf_reboot()` — system reboot
 
 The library communicates with the kernel display driver (DisplayJet) via
 custom MOSIX syscalls (110–120).

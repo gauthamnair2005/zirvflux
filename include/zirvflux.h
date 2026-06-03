@@ -61,4 +61,7 @@ typedef struct {
 /* Read next mouse event (non-blocking). Returns 0 on success, -1 if none. */
 int zf_read_mouse(zf_mouse_event_t *ev);
 
+/* Set performance mode (hint to compositor). Currently a no-op stub. */
+int zf_set_perf_mode(int mode);
+
 #endif

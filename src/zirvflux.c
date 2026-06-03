@@ -128,6 +128,12 @@ int zf_set_cursor(int x, int y)
     return (int)zf_syscall2(SYS_DJ_SET_CURSOR, (long)x, (long)y);
 }
 
+int zf_set_perf_mode(int mode)
+{
+    (void)mode;
+    return 0;
+}
+
 int zf_read_mouse(zf_mouse_event_t *ev)
 {
     if (!ev) return -1;
