@@ -49,8 +49,10 @@ int  zf_present_region(const zf_buffer_t *buf,
 int  zf_list_buffers(zf_buffer_t *bufs, uint32_t *count);
 
 void zf_reboot(void);
+void zf_shutdown(void);
 int  zf_set_cursor(int x, int y);
 int  zf_set_cursor_style(int style);
+int  zf_set_mode(uint32_t width, uint32_t height);
 
 /* ── Mouse / touchpad ──────────────────────────────────────────────────── */
 typedef struct {

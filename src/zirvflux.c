@@ -11,9 +11,11 @@
 #define SYS_DJ_SURFACE_READ    117
 #define SYS_DJ_LIST_SURFACES   118
 #define SYS_REBOOT             100
+#define SYS_SHUTDOWN           101
 #define SYS_MOUSE_READ         122
 #define SYS_DJ_SET_CURSOR      123
 #define SYS_DJ_SET_CURSOR_STYLE 128
+#define SYS_DJ_SET_MODE        129
 
 static long zf_syscall0(long n)
 {
@@ -124,6 +126,11 @@ void zf_reboot(void)
     zf_syscall0(SYS_REBOOT);
 }
 
+void zf_shutdown(void)
+{
+    zf_syscall0(SYS_SHUTDOWN);
+}
+
 int zf_set_cursor(int x, int y)
 {
     return (int)zf_syscall2(SYS_DJ_SET_CURSOR, (long)x, (long)y);
@@ -132,6 +139,11 @@ int zf_set_cursor(int x, int y)
 int zf_set_cursor_style(int style)
 {
     return (int)zf_syscall1(SYS_DJ_SET_CURSOR_STYLE, (long)style);
+}
+
+int zf_set_mode(uint32_t width, uint32_t height)
+{
+    return (int)zf_syscall2(SYS_DJ_SET_MODE, (long)width, (long)height);
 }
 
 int zf_set_perf_mode(int mode)
