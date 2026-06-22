@@ -13,6 +13,7 @@
 #define SYS_REBOOT             100
 #define SYS_MOUSE_READ         122
 #define SYS_DJ_SET_CURSOR      123
+#define SYS_DJ_SET_CURSOR_STYLE 128
 
 static long zf_syscall0(long n)
 {
@@ -126,6 +127,11 @@ void zf_reboot(void)
 int zf_set_cursor(int x, int y)
 {
     return (int)zf_syscall2(SYS_DJ_SET_CURSOR, (long)x, (long)y);
+}
+
+int zf_set_cursor_style(int style)
+{
+    return (int)zf_syscall1(SYS_DJ_SET_CURSOR_STYLE, (long)style);
 }
 
 int zf_set_perf_mode(int mode)

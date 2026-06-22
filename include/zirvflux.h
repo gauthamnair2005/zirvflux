@@ -50,6 +50,7 @@ int  zf_list_buffers(zf_buffer_t *bufs, uint32_t *count);
 
 void zf_reboot(void);
 int  zf_set_cursor(int x, int y);
+int  zf_set_cursor_style(int style);
 
 /* ── Mouse / touchpad ──────────────────────────────────────────────────── */
 typedef struct {
